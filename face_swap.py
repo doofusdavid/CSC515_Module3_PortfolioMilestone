@@ -17,10 +17,10 @@ def extract_index_nparray(nparray):
     return index
 
 
-img = cv2.imread("img/david_front_portrait.jpeg")
+img = cv2.imread("img/david_smile.jpeg")
 img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 mask = np.zeros_like(img_gray)
-img2 = cv2.imread("img/dave_grohl_seated.jpeg")
+img2 = cv2.imread("img/windowlicker.jpg")
 img2_gray = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
 # We load Face detector and Face landmarks predictor
@@ -167,7 +167,7 @@ center_face2 = (int((x + x + w) / 2), int((y + y + h) / 2))
 seamlessclone = cv2.seamlessClone(
     result, img2, img2_head_mask, center_face2, cv2.NORMAL_CLONE)
 
-cv2.imwrite("david_grohl.jpg", seamlessclone)
+cv2.imwrite("out/david_aphex-2.jpg", seamlessclone)
 cv2.imshow("seamlessclone", seamlessclone)
 cv2.waitKey(0)
 
